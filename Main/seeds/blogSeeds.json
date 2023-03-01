@@ -1,0 +1,27 @@
+[
+  {
+    "blog_title": "Tech blog live!",
+    "blog_text": "Vivamus quis felis ut lacus elementum imperdiet. Nunc imperdiet, sapien ut varius consequat, urna erat hendrerit quam",
+    "user_id": "1"
+  },
+  {
+    "blog_title": "Launch of TechChat!",
+    "blog_text": "Vivamus quis felis ut lacus elementum imperdiet. Nunc imperdiet, sapien ut varius consequat, urna erat hendrerit quam",
+    "user_id": "3"
+  },
+  {
+    "blog_title": "The long-awaited TechChat is here!",
+    "blog_text": "Vivamus quis felis ut lacus elementum imperdiet. Nunc imperdiet, sapien ut varius consequat, urna erat hendrerit quam",
+    "user_id": "5"
+  },
+  {
+    "blog_title": "Github update!",
+    "blog_text": "Vivamus quis felis ut lacus elementum imperdiet. Nunc imperdiet, sapien ut varius consequat, urna erat hendrerit quam",
+    "user_id": "4"
+  },
+  {
+    "blog_title": "New CSS template!",
+    "blog_text": "Vivamus quis felis ut lacus elementum imperdiet. Nunc imperdiet, sapien ut varius consequat, urna erat hendrerit quam",
+    "user_id": "3"
+  }
+]

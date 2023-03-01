@@ -5,19 +5,19 @@ const withAuth = require('../../utils/auth');
 //get all blogs
 router.get('/', (req, res) => {
     Blog.findAll({
-      attributes: ['id', 'post_name', 'description', 'created_at'],
+      attributes: ['id', 'blog_title', 'blog_text', 'created_at'],
       order: [['created_at', 'DESC']],
       include: [
         {
           model: User,
-          attributes: ['name']
+          attributes: ['username']
         },
         {
           model: Comment,
           attributes: ['id', 'comment', 'blog_id', 'user_id', 'created_at'],
           include: {
             model: User,
-            attributes: ['name']
+            attributes: ['username']
           }
         }
       ]
@@ -35,18 +35,18 @@ router.get('/:id', (req, res) => {
       where: {
         id: req.params.id
       },
-      attributes: ['id', 'post_name', 'description', 'created_at'],
+      attributes: ['id', 'blog_title', 'blog_text', 'created_at'],
       include: [
         {
           model: User,
-          attributes: ['name']
+          attributes: ['username']
         },
         {
           model: Comment,
           attributes: ['id', 'comment', 'blog_id', 'user_id', 'created_at'],
           include: {
             model: User,
-            attributes: ['name']
+            attributes: ['username']
           }
         }
       ]
@@ -69,8 +69,8 @@ router.post('/', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.create({
       user_id: req.session.user_id,
-      description: req.body.description,
-      post_name: req.body.post_name
+      blog_text: req.body.blog_text,
+      blog_title: req.body.blog_title
     });
 
     res.status(200).json(blogData);
@@ -82,8 +82,8 @@ router.post('/', withAuth, async (req, res) => {
 router.put('/:id', withAuth, async (req, res) => {
     try {
         const blogData = await Blog.update({
-          description: req.body.description,
-          post_name: req.body.post_name
+          blog_text: req.body.blog_text,
+          blog_title: req.body.blog_title
         },
         {
           where: {

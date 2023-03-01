@@ -7,7 +7,7 @@ event.preventDefault();
     const blog_text = document.querySelector('textarea[name="blog-text"]').value;
 
 
-   const response = await fetch(`/api/posts`, {
+   const response = await fetch(`/api/blogs`, {
       method: 'POST',
       body: JSON.stringify({
          blog_title,

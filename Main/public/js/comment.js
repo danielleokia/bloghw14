@@ -3,10 +3,8 @@
 async function submitComment(event) {
 event.preventDefault();
     
-    const comment = document.querySelector('textarea[name="comment-body"]').value.trim();
-    const blog_id = window.location.toString().split('/')[
-      window.location.toString().split('/'). length - 1
-    ];
+    const comment = document.querySelector('textinput[name="comment-text"]').getAttribute('value').trim();
+    const blog_id = window.location.toString().split('/').pop();
 
 if (comment) {
    const response = await fetch('/api/comments', {

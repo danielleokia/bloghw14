@@ -8,8 +8,8 @@ router.get('/', withAuth, async (req, res) => {
     const blogData = await Blog.findAll({
       attributes: [
       'id',
-      'post_name',
-      'description',
+      'blog_title',
+      'blog_text',
       'created_at'
       ],
       include:[
@@ -20,7 +20,7 @@ router.get('/', withAuth, async (req, res) => {
       
         {
         model: User,  
-        attributes: ['name'],
+        attributes: ['username'],
       },
 
     ]
@@ -46,18 +46,18 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
-    attributes: ['id', 'post_name', 'description', 'created_at'],
+    attributes: ['id', 'blog_title', 'blog_text', 'created_at'],
     include: [
       {
         model: User,
-        attributes: ['name']
+        attributes: ['username']
       },
       {
         model: Comment,
         attributes: ['id', 'comment', 'blog_id', 'user_id', 'created_at'],
         include: {
           model: User,
-          attributes: ['name']
+          attributes: ['username']
         }
       }
     ]

@@ -7,19 +7,19 @@ router.get('/', withAuth, (req, res) => {
      where: {
             user_id: req.session.user_id
           },
-      attributes: ['id', 'post_name', 'description', 'created_at'],
+      attributes: ['id', 'blog_title', 'blog_text', 'created_at'],
       order: [['created_at', 'DESC']],
       include: [
         {
           model: User,
-          attributes: ['name']
+          attributes: ['username']
         },
         {
           model: Comment,
           attributes: ['id', 'comment', 'blog_id', 'user_id', 'created_at'],
           include: {
             model: User,
-            attributes: ['name']
+            attributes: ['username']
           }
         }
       ]
@@ -40,18 +40,18 @@ router.get('/edit/:id', (req, res) => {
       where: {
         id: req.params.id
       },
-      attributes: ['id', 'post_name', 'description', 'created_at'],
+      attributes: ['id', 'blog_title', 'blog_text', 'created_at'],
       include: [
         {
           model: User,
-          attributes: ['name']
+          attributes: ['username']
         },
         {
           model: Comment,
           attributes: ['id', 'comment', 'blog_id', 'user_id', 'created_at'],
           include: {
             model: User,
-            attributes: ['name']
+            attributes: ['username']
           }
         }
       ]
@@ -63,7 +63,7 @@ router.get('/edit/:id', (req, res) => {
         }
         const blogs = blogData.get({plain:true});
 
-    res.render('edit-post', {blogs, logged_in: req.session.logged_in});
+    res.render('edit-blog', {blogs, logged_in: req.session.logged_in});
       })
       .catch(err => {
         console.log(err);
@@ -72,7 +72,7 @@ router.get('/edit/:id', (req, res) => {
   });
 
   router.get('/new', (req, res) => {
-    res.render('new-post');
+    res.render('new-blog');
   });
 
-  modile.exports = router;
+  module.exports = router;

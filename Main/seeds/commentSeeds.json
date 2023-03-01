@@ -1,0 +1,28 @@
+[
+  {
+    "blog_id": "1",
+    "user_id": "1",
+    "comment": "Sed ultricies eget elit et consequat."
+  },
+  {
+    "blog_id": "2",
+    "user_id": "3",
+    "comment": "Nunc rhoncus, mauris a aliquet tincidunt"
+  },
+  {
+    "blog_id": "5",
+    "user_id": "2",
+    "comment": "Nulla auctor, eros id faucibus venenatis"
+  },
+  {
+    "blog_id": "2",
+    "user_id": "2",
+    "comment": "Donec quis odio lectus!."
+  },
+  {
+    "blog_id": "3",
+    "user_id": "5",
+    "comment": "Nulla auctor, eros id faucibus venenatis"
+  }
+
+]

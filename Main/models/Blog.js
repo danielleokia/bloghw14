@@ -11,11 +11,11 @@ Blog.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    post_name: {
+    blog_title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    blog_text: {
         type: DataTypes.STRING,
         allowNull: false,   
     },
